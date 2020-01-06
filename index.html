@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kit.fontawesome.com/193a4636b6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div id="app">
+    <div id="meatGrid" class="container">
+      <div class="row">
+        <h3>Meat</h3>
+      </div>
+      <div class="row">
+        <h5>Courage</h5>
+      </div>
+      <div id="meatCourage" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'meat' && ingredient.type === 'courage'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Resilience</h5>
+      </div>
+      <div id="meatResilience" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'meat' && ingredient.type === 'resilience'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Vigor</h5>
+      </div>
+      <div id="meatVigor" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'meat' && ingredient.type === 'vigor'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Acumen</h5>
+      </div>
+      <div id="meatAcumen" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'meat' && ingredient.type === 'acumen'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Artillery</h5>
+      </div>
+      <div id="meatArtillery" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'meat' && ingredient.type === 'artillery'"></ingredient-box>
+      </div>
+    </div>
+    <div id="drinkGrid" class="container">
+      <div class="row">
+        <h3>Fish</h3>
+      </div>
+      <div class="row">
+        <h5>Courage</h5>
+      </div>
+      <div id="drinkCourage" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient.name"
+          v-bind:hint="ingredient.hint"
+          v-bind:acquired="ingredient.acquired"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'courage'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Resilience</h5>
+      </div>
+      <div id="drinkResilience" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'resilience'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Vigor</h5>
+      </div>
+      <div id="drinkVigor" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'vigor'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Acumen</h5>
+      </div>
+      <div id="drinkAcumen" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'acumen'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Artillery</h5>
+      </div>
+      <div id="drinkArtillery" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'artillery'"></ingredient-box>
+      </div>
+    </div>
+    <div id="vegetableGrid" class="container">
+      <div class="row">
+        <h3>Vegetable</h3>
+      </div>
+      <div class="row">
+        <h5>Courage</h5>
+      </div>
+      <div id="vegetableCourage" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'vegetable' && ingredient.type === 'courage'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Resilience</h5>
+      </div>
+      <div id="vegetableResilience" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'vegetable' && ingredient.type === 'resilience'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Vigor</h5>
+      </div>
+      <div id="vegetableVigor" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'vegetable' && ingredient.type === 'vigor'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Acumen</h5>
+      </div>
+      <div id="vegetableAcumen" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'vegetable' && ingredient.type === 'acumen'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Artillery</h5>
+      </div>
+      <div id="vegetableArtillery" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'vegetable' && ingredient.type === 'artillery'"></ingredient-box>
+      </div>
+    </div>
+    <div id="drinkGrid" class="container">
+      <div class="row">
+        <h3>Drink</h3>
+      </div>
+      <div class="row">
+        <h5>Perception</h5>
+      </div>
+      <div id="drinkPerception" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'perception'"></ingredient-box>
+      </div>
+      <div class="row">
+        <h5>Fortune</h5>
+      </div>
+      <div id="drinkFortune" class="row">
+        <ingredient-box
+          v-for="ingredient in ingredients"
+          v-bind:key="ingredient.id"
+          v-bind:ingredient="ingredient"
+          v-if="ingredient.category === 'drink' && ingredient.type === 'fortune'"></ingredient-box>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
